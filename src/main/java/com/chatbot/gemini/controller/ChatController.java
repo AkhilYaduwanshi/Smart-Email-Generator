@@ -3,6 +3,7 @@ package com.chatbot.gemini.controller;
 import com.chatbot.gemini.model.ChatRequest;
 import com.chatbot.gemini.model.ChatResponse;
 import com.chatbot.gemini.service.ChatService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,7 +17,7 @@ public class ChatController {
     }
 
     @PostMapping
-    public ChatResponse chat(@RequestBody ChatRequest request) {
+    public ChatResponse chat(@Valid @RequestBody ChatRequest request) {
 
         String reply = chatService.getReply(request.getMessage());
 

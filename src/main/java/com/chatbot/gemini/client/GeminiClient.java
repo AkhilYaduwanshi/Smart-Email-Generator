@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 import com.chatbot.gemini.model.dto.GeminiResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -18,6 +20,8 @@ public class GeminiClient {
 
     @Value("${gemini.api.key}")
     private String apiKey;
+
+    private static final Logger log = LoggerFactory.getLogger(GeminiClient.class);
 
     private final WebClient webClient;
 
@@ -29,6 +33,8 @@ public class GeminiClient {
 
         try {
 
+            log.info("Received request: {}", message);
+
             String url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=" + apiKey;
 
             // Request DTO
@@ -37,6 +43,9 @@ public class GeminiClient {
             GeminiRequest body = new GeminiRequest(List.of(content));
 
             // API Call
+
+            log.info("Sending request to Gemini API...");
+
             GeminiResponse response = webClient.post()
                     .uri(url)
                     .contentType(MediaType.APPLICATION_JSON)
@@ -46,6 +55,9 @@ public class GeminiClient {
                     .block();
 
             // Response Parsing
+
+            log.info("Response received successfully from Gemini API.");
+
             return response.getCandidates()
                     .get(0)
                     .getContent()
@@ -54,6 +66,9 @@ public class GeminiClient {
                     .getText();
 
         } catch (Exception e) {
+
+            log.error("Error while calling Gemini API", e);
+
             throw new GeminiApiException( "Unable to connect to Gemini API",e);
         }
     }
