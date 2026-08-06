@@ -1,23 +1,16 @@
 package com.chatbot.gemini.model.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class GeminiRequest {
 
     private List<Content> contents;
 
-    public GeminiRequest() {
-    }
-
-    public GeminiRequest(List<Content> contents) {
-        this.contents = contents;
-    }
-
-    public List<Content> getContents() {
-        return contents;
-    }
-
-    public void setContents(List<Content> contents) {
-        this.contents = contents;
-    }
 }

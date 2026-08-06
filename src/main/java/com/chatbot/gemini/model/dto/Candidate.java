@@ -1,21 +1,14 @@
 package com.chatbot.gemini.model.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Candidate {
 
     private Content content;
 
-    public Candidate() {
-    }
-
-    public Candidate(Content content) {
-        this.content = content;
-    }
-
-    public Content getContent() {
-        return content;
-    }
-
-    public void setContent(Content content) {
-        this.content = content;
-    }
 }
