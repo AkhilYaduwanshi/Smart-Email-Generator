@@ -7,8 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ChatResponse {
+public class EmailResponse {
 
-    private String reply;
+    private String subject;
 
+    private String body;
 }

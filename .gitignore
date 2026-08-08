@@ -1,39 +1,20 @@
-HELP.md
+# Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Backend
 target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+# IDE
+.idea/
 *.iml
-*.ipr
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
-
-# Environment variables
+# Environment / secrets
 .env
+.env.*
+!.env.example
 
-# Local application properties (contains API keys)
-src/main/resources/application.properties
+# OS
+.DS_Store
+Thumbs.db

@@ -8,9 +8,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ChatRequest {
+public class EmailRequest {
 
     @NotBlank(message = "Message must not be blank")
     private String message;
 
+    private String tone;
 }
