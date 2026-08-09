@@ -1,5 +1,7 @@
 # 📧 Smart Email Generator
 
+🚀 **[Live Demo](https://smart-email-generator-sigma.vercel.app/)**
+
 An AI-powered email generator built with **Spring Boot, React, and Gemini API**.
 
 Generate clear, well-structured emails in different tones from a simple description.
