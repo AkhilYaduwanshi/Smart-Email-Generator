@@ -27,7 +27,7 @@ function App() {
 
     try {
       const response = await axios.post(
-          'http://localhost:8081/generate-email',
+'https://smart-email-generator-api.onrender.com/generate-email',
           {
             message: message,
             tone: tone
